@@ -143,12 +143,16 @@ class BankingSystem:
                 break
             else:
                 print("Invalid choice. Please try again.")
-def Admin_login():
-            admin_name=input("Enter the user name:")
-            admin_password=input("Enter the admin password")
-            with open("Admin_login.txt","a") as file:
-                file.write(f"{admin_name}/t") 
-                file.write(f"{admin_password}/n")
+def admin_login():
+    print("--- Admin Login ---")
+    username = input("Enter admin username: ")
+    password = input("Enter admin password: ")
+
+    if username == "admin" and password == "admin123":
+        print("Login successful.\n")
+        main_menu()
+    else:
+        print("Invalid credentials. Access denied.")
 
 Admin_login()
 if __name__ == "__main__":
