@@ -153,9 +153,11 @@ def admin_login():
         main_menu()
     else:
         print("Invalid credentials. Access denied.")
-
-Admin_login()
-if __name__ == "__main__":
+def main_menu():
     system = BankingSystem()
     system.main()
+
+# Entry point
+if __name__ == "__main__":
+    admin_login()
    
