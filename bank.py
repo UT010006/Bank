@@ -183,4 +183,5 @@ def main_menu():
 
 # Entry point
 if __name__ == "__main__":
+    load_customer_data()
     admin_login()
