@@ -4,7 +4,26 @@ customers = {}
 customer_last_id = 0
 
 # Functions for banking system
-
+def load_customer_data():
+    global customer_last_id
+    try:
+        with open("bank_data.txt", "r") as f:
+            for line in f:
+                parts = line.strip().split("|")
+                if len(parts) == 6:
+                    acc, cid, name, pwd, bal, txn = parts
+                    customers[acc] = {
+                        "customer_id": cid,
+                        "name": name,
+                        "password": pwd,
+                        "balance": float(bal),
+                        "transaction_history": [txn]
+                    }
+                    id_num = int(cid[2:])
+                    if id_num > customer_last_id:
+                        customer_last_id = id_num
+    except FileNotFoundError:
+        pass
 def auto_generate_customer_id():
     global customer_last_id
     customer_last_id += 1
