@@ -203,8 +203,21 @@ def main_menu():
                 print("Invalid input. Please enter 'admin' or 'Customer'.")
         else:
             print("Invalid choice. Please try again.")
+# Admin login function
+def admin_login():
+    print("--- Admin Login ---")
+    username = input("Enter admin username: ")
+    password = input("Enter admin password: ")
 
+    if username == "admin" and password == "admin123":
+        print("Login successful.\n")
+        main_menu()  # Show the banking menu
+    else:
+        print("Invalid credentials. Access denied.")
 # Entry point
 if __name__ == "__main__":
-    load_customer_data()
+    load_customer_data() 
+    admin_login()
     main_menu()  # Start the main menu directly
+    
+    
