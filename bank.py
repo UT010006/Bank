@@ -218,6 +218,5 @@ def admin_login():
 if __name__ == "__main__":
     load_customer_data() 
     admin_login()
-    main_menu()  # Start the main menu directly
     
     
